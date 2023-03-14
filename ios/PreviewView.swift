@@ -1,0 +1,27 @@
+
+import AVFoundation
+import Foundation
+import UIKit
+
+class PreviewView: UIView {
+  /// Convenience wrapper to get layer as its statically known type.
+  var videoPreviewLayer: AVCaptureVideoPreviewLayer {
+    // swiftlint:disable force_cast
+    return layer as! AVCaptureVideoPreviewLayer
+  }
+
+  override public class var layerClass: AnyClass {
+    return AVCaptureVideoPreviewLayer.self
+  }
+
+  init(frame: CGRect, session: AVCaptureSession) {
+    super.init(frame: frame)
+    videoPreviewLayer.session = session
+    videoPreviewLayer.videoGravity = .resizeAspectFill
+  }
+
+  @available(*, unavailable)
+  required init?(coder _: NSCoder) {
+    fatalError("init(coder:) is not implemented!")
+  }
+}
