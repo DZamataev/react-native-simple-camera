@@ -14,6 +14,7 @@ export interface CameraProps extends ViewProps {
   torch?: 'off' | 'on';
   zoom?: number;
   enableZoomGesture?: boolean;
+  enableReadCode: boolean;
   preset?: CameraPreset;
   cameraAspectRatio?: CameraAspectRatio;
   /**
@@ -26,4 +27,5 @@ export interface CameraProps extends ViewProps {
   orientation?: Orientation;
   onError?: (error: CameraRuntimeError) => void;
   onInitialized?: () => void;
+  onReadCode?: (code: string) => void;
 }

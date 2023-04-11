@@ -28,6 +28,7 @@ class CameraViewManager(reactContext: ReactApplicationContext) : ViewGroupManage
       .put("cameraViewReady", MapBuilder.of("registrationName", "onViewReady"))
       .put("cameraInitialized", MapBuilder.of("registrationName", "onInitialized"))
       .put("cameraError", MapBuilder.of("registrationName", "onError"))
+      .put("cameraReadCode", MapBuilder.of("registrationName", "onReadCode"))
       .build()
   }
 
@@ -106,6 +107,14 @@ class CameraViewManager(reactContext: ReactApplicationContext) : ViewGroupManage
       addChangedPropToTransaction(view, "enableZoomGesture")
     view.enableZoomGesture = enableZoomGesture
   }
+
+  @ReactProp(name = "enableReadCode")
+  fun setEnableReadCode(view: CameraView, enableReadCode: Boolean) {
+    if (view.enableReadCode != enableReadCode)
+        addChangedPropToTransaction(view, "enableReadCode")
+    view.enableReadCode = enableReadCode
+  }
+
 
   @ReactProp(name = "orientation")
   fun setOrientation(view: CameraView, orientation: String) {

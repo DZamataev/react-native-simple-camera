@@ -27,10 +27,12 @@ public final class CameraView: UIView {
     @objc var torch = "off"
     @objc var zoom: NSNumber = 1.0 // in "factor"
     @objc var videoStabilizationMode: NSString?
+    @objc var enableReadCode = false
     // events
     @objc var onInitialized: RCTDirectEventBlock?
     @objc var onError: RCTDirectEventBlock?
     @objc var onViewReady: RCTDirectEventBlock?
+    @objc var onReadCode: RCTDirectEventBlock?
     // zoom
     @objc var enableZoomGesture = false {
         didSet {
@@ -69,7 +71,9 @@ public final class CameraView: UIView {
     internal let audioQueue = CameraQueues.audioQueue
     internal let sensorOrientationChecker = RNSensorOrientationChecker()
     
-    internal var previewView: UIView?
+    internal var previewView: PreviewView?
+    
+    internal var codeStringValue: String?
     
     /// Returns whether the AVCaptureSession is currently running (reflected by isActive)
     var isRunning: Bool {
@@ -297,5 +301,11 @@ public final class CameraView: UIView {
         ReactLogger.log(level: .info, message: "Camera initialized!")
         guard let onInitialized = onInitialized else { return }
         onInitialized([String: Any]())
+    }
+    
+    internal final func invokeOnReadCode(code: String) {
+        ReactLogger.log(level: .error, message: "Invoking onReadCode(): \(code)")
+        guard let onReadCode = onReadCode else { return }
+        onReadCode(["code": code])
     }
 }
