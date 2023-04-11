@@ -30,6 +30,7 @@ export function CameraPage({ navigation }: Props): React.ReactElement {
   const [cameraPosition, setCameraPosition] = useState<CameraPosition>('back');
   const [flash, setFlash] = useState<'off' | 'on'>('off');
   const [ratio, setRatio] = useState<CameraAspectRatio>('16_9');
+  const [qr, setQr] = useState<'off' | 'on'>('off');
 
   const onError = useCallback((error: CameraRuntimeError) => {
     console.error(error);
@@ -52,6 +53,10 @@ export function CameraPage({ navigation }: Props): React.ReactElement {
     setFlash((p) => (p === 'off' ? 'on' : 'off'));
   }, []);
 
+  const toggleQRCodeRead = useCallback(() => {
+    setQr((p) => (p === 'off' ? 'on' : 'off'));
+  }, []);
+
   return (
     <View style={styles.container}>
       <CameraView
@@ -68,6 +73,7 @@ export function CameraPage({ navigation }: Props): React.ReactElement {
           console.log('js on read code:', code);
         }}
         enableZoomGesture={true}
+        enableReadCode={qr === 'off' ? false : true}
         photo={true}
         video={true}
         audio={true}
@@ -129,6 +135,9 @@ export function CameraPage({ navigation }: Props): React.ReactElement {
             <Text children={`Flash: ${flash}`} />
           </TouchableOpacity>
         )}
+        <TouchableOpacity onPress={toggleQRCodeRead}>
+          <Text children={`QR: ${qr}`} />
+        </TouchableOpacity>
       </View>
     </View>
   );

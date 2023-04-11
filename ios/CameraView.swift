@@ -27,6 +27,7 @@ public final class CameraView: UIView {
     @objc var torch = "off"
     @objc var zoom: NSNumber = 1.0 // in "factor"
     @objc var videoStabilizationMode: NSString?
+    @objc var enableReadCode = false
     // events
     @objc var onInitialized: RCTDirectEventBlock?
     @objc var onError: RCTDirectEventBlock?

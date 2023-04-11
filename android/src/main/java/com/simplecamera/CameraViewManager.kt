@@ -108,6 +108,14 @@ class CameraViewManager(reactContext: ReactApplicationContext) : ViewGroupManage
     view.enableZoomGesture = enableZoomGesture
   }
 
+  @ReactProp(name = "enableReadCode")
+  fun setEnableReadCode(view: CameraView, enableReadCode: Boolean) {
+    if (view.enableReadCode != enableReadCode)
+        addChangedPropToTransaction(view, "enableReadCode")
+    view.enableReadCode = enableReadCode
+  }
+
+
   @ReactProp(name = "orientation")
   fun setOrientation(view: CameraView, orientation: String) {
     if (view.orientation != orientation)
