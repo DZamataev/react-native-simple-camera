@@ -83,6 +83,7 @@ class CameraView(context: Context) : FrameLayout(context), LifecycleOwner {
   internal var camera: Camera? = null
   internal var imageCapture: ImageCapture? = null
   internal var videoCapture: VideoCapture<Recorder>? = null
+  private var imageAnalyzer: ImageAnalysis? = null
   private var preview: Preview? = null
 
   internal var activeVideoRecording: Recording? = null
@@ -351,6 +352,19 @@ class CameraView(context: Context) : FrameLayout(context), LifecycleOwner {
         imageCapture = imageCaptureBuilder.build()
         useCases.add(imageCapture!!)
       }
+
+      imageAnalyzer = ImageAnalysis.Builder()
+        .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
+        .build()
+      val analyzer = QRCodeAnalyzer { barcodes ->
+        if (barcodes.isNotEmpty()) {
+          barcodes.forEach {
+            invokeOnReadCode(it)
+          }
+        }
+      }
+      imageAnalyzer!!.setAnalyzer(cameraExecutor, analyzer)
+      useCases.add(imageAnalyzer!!)
 
       preview = previewBuilder.build()
       Log.i(TAG, "Attaching ${useCases.size} use-cases...")
