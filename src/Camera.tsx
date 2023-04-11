@@ -40,14 +40,18 @@ interface OnErrorEvent {
   message: string;
   cause?: ErrorWithCause;
 }
+interface OnReadCodeEvent {
+  code: string;
+}
 type NativeCameraViewProps = Omit<
   CameraProps,
-  'device' | 'onInitialized' | 'onError'
+  'device' | 'onInitialized' | 'onError' | 'onReadCode'
 > & {
   cameraId: string;
   onInitialized?: (event: NativeSyntheticEvent<void>) => void;
   onError?: (event: NativeSyntheticEvent<OnErrorEvent>) => void;
   onViewReady: () => void;
+  onReadCode: (event: NativeSyntheticEvent<OnReadCodeEvent>) => void;
 };
 
 const _CameraModule = NativeModules.CameraView;
@@ -169,6 +173,13 @@ export const CameraView = memo(
 
       function onViewReady(): void {}
 
+      function onReadCode(event: NativeSyntheticEvent<OnReadCodeEvent>) {
+        if (props.onReadCode != null) {
+          const code = event.nativeEvent;
+          props.onReadCode(code.code);
+        }
+      }
+
       if (!device) return null;
 
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -185,6 +196,7 @@ export const CameraView = memo(
           onInitialized={props.onInitialized}
           onError={onError}
           onViewReady={onViewReady}
+          onReadCode={onReadCode}
         />
       );
     }

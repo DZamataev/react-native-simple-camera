@@ -37,6 +37,7 @@ RCT_EXPORT_VIEW_PROPERTY(orientation, NSString);
 RCT_EXPORT_VIEW_PROPERTY(onError, RCTDirectEventBlock);
 RCT_EXPORT_VIEW_PROPERTY(onInitialized, RCTDirectEventBlock);
 RCT_EXPORT_VIEW_PROPERTY(onViewReady, RCTDirectEventBlock);
+RCT_EXPORT_VIEW_PROPERTY(onReadCode, RCTDirectEventBlock);
 
 // Camera View Functions
 RCT_EXTERN_METHOD(startRecording:(nonnull NSNumber *)node options:(NSDictionary *)options onRecordCallback:(RCTResponseSenderBlock)onRecordCallback);

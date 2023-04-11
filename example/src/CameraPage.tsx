@@ -64,6 +64,9 @@ export function CameraPage({ navigation }: Props): React.ReactElement {
         onInitialized={() => {
           setR((p) => p + 1);
         }}
+        onReadCode={(code) => {
+          console.log('js on read code:', code);
+        }}
         enableZoomGesture={true}
         photo={true}
         video={true}

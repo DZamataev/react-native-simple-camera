@@ -26,4 +26,5 @@ export interface CameraProps extends ViewProps {
   orientation?: Orientation;
   onError?: (error: CameraRuntimeError) => void;
   onInitialized?: () => void;
+  onReadCode?: (code: string) => void;
 }
