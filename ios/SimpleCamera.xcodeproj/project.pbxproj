@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D0A827F29E7CBA300AE4200 /* CameraView+AVCaptureMetadataOutputObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0A827E29E7CBA300AE4200 /* CameraView+AVCaptureMetadataOutputObjects.swift */; };
 		9268750429ACB93E00360976 /* CameraView+Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926874CF29ACB93300360976 /* CameraView+Orientation.swift */; };
 		9268750529ACB93E00360976 /* CameraView+AVCaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926874D029ACB93300360976 /* CameraView+AVCaptureSession.swift */; };
 		9268750629ACB93E00360976 /* CameraView+AVAudioSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926874E629ACB93300360976 /* CameraView+AVAudioSession.swift */; };
@@ -72,6 +73,7 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libSimpleCamera.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSimpleCamera.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D0A827E29E7CBA300AE4200 /* CameraView+AVCaptureMetadataOutputObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CameraView+AVCaptureMetadataOutputObjects.swift"; sourceTree = "<group>"; };
 		926874CF29ACB93300360976 /* CameraView+Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CameraView+Orientation.swift"; sourceTree = "<group>"; };
 		926874D029ACB93300360976 /* CameraView+AVCaptureSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CameraView+AVCaptureSession.swift"; sourceTree = "<group>"; };
 		926874D129ACB93300360976 /* CameraViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewManager.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				8D0A827E29E7CBA300AE4200 /* CameraView+AVCaptureMetadataOutputObjects.swift */,
 				F4FF95D5245B92E700C19C63 /* SimpleCamera-Bridging-Header.h */,
 				92D7130A29AE49F50064219F /* RNSensorOrientationChecker.h */,
 				92D7130B29AE49F50064219F /* RNSensorOrientationChecker.m */,
@@ -325,6 +328,7 @@
 				9268751F29ACB94A00360976 /* AVAudioSession+updateCategory.swift in Sources */,
 				9268752929ACB94F00360976 /* AVAuthorizationStatus+descriptor.swift in Sources */,
 				9268750B29ACB93E00360976 /* CameraError.swift in Sources */,
+				8D0A827F29E7CBA300AE4200 /* CameraView+AVCaptureMetadataOutputObjects.swift in Sources */,
 				9268753429ACB95B00360976 /* Callback.swift in Sources */,
 				9268752229ACB94F00360976 /* AVVideoCodecType+descriptor.swift in Sources */,
 				9268753329ACB95B00360976 /* ReactLogger.swift in Sources */,

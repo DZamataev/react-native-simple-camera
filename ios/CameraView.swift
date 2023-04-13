@@ -1,4 +1,3 @@
-
 import AVFoundation
 import Foundation
 import UIKit
@@ -7,7 +6,6 @@ import UIKit
 private let propsThatRequireReconfiguration = ["cameraId", "photo", "video", "cameraAspectRatio"]
 
 // MARK: - CameraView
-
 public final class CameraView: UIView {
     // pragma MARK: React Properties
     
