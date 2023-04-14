@@ -52,7 +52,6 @@ class CameraView(context: Context) : FrameLayout(context), LifecycleOwner {
   // props that require reconfiguring
   var cameraId: String? = null
   var aspectRatio = AspectRatio.RATIO_16_9
-  var enableHighQualityPhotos: Boolean? = null
 
   // use-cases
   var photo: Boolean? = null

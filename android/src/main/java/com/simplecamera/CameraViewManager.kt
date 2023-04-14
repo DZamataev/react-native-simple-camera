@@ -72,13 +72,6 @@ class CameraViewManager(reactContext: ReactApplicationContext) : ViewGroupManage
     view.audio = audio
   }
 
-  @ReactProp(name = "enableHighQualityPhotos")
-  fun setEnableHighQualityPhotos(view: CameraView, enableHighQualityPhotos: Boolean?) {
-    if (view.enableHighQualityPhotos != enableHighQualityPhotos)
-      addChangedPropToTransaction(view, "enableHighQualityPhotos")
-    view.enableHighQualityPhotos = enableHighQualityPhotos
-  }
-
   @ReactProp(name = "isActive")
   fun setIsActive(view: CameraView, isActive: Boolean) {
     if (view.isActive != isActive)
