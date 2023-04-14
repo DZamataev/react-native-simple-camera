@@ -5,7 +5,7 @@ import Foundation
 /**
  Extension for CameraView that sets up the AVCaptureSession, Device and Format.
  */
-extension CameraView: AVCaptureMetadataOutputObjectsDelegate {
+extension CameraView {
     // pragma MARK: Configure Capture Session
     
     /**
