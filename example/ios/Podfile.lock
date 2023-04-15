@@ -272,7 +272,7 @@ PODS:
     - RCTTypeSafety
     - React-Core
     - ReactCommon/turbomodule/core
-  - react-native-simple-camera (0.3.9):
+  - react-native-simple-camera (0.4.1):
     - React-Core
   - react-native-video (5.2.1):
     - React-Core
@@ -522,7 +522,7 @@ SPEC CHECKSUMS:
   React-jsinspector: 9f7c9137605e72ca0343db4cea88006cb94856dd
   React-logger: 957e5dc96d9dbffc6e0f15e0ee4d2b42829ff207
   react-native-safe-area-context: 39c2d8be3328df5d437ac1700f4f3a4f75716acc
-  react-native-simple-camera: 14700ec8648ba294435b8dd6cf6347db3f8a3035
+  react-native-simple-camera: 8640671a879ba137f00d89d8832abca5d8dff8e4
   react-native-video: c26780b224543c62d5e1b2a7244a5cd1b50e8253
   React-perflogger: af8a3d31546077f42d729b949925cc4549f14def
   React-RCTActionSheet: 57cc5adfefbaaf0aae2cf7e10bccd746f2903673
@@ -541,6 +541,6 @@ SPEC CHECKSUMS:
   RNStaticSafeAreaInsets: 055ddbf5e476321720457cdaeec0ff2ba40ec1b8
   Yoga: 5ed1699acbba8863755998a4245daa200ff3817b
 
-PODFILE CHECKSUM: 50f69b27364663db9023fb1acb08019cbd59a574
+PODFILE CHECKSUM: e36801abf91a38e49ffe1fec81045bd5b4e923cc
 
 COCOAPODS: 1.11.3
