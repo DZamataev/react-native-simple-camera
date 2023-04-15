@@ -14,7 +14,7 @@ export interface CameraProps extends ViewProps {
   torch?: 'off' | 'on';
   zoom?: number;
   enableZoomGesture?: boolean;
-  enableReadCode: boolean;
+  enableReadCode?: boolean;
   preset?: CameraPreset;
   cameraAspectRatio?: CameraAspectRatio;
   /**
